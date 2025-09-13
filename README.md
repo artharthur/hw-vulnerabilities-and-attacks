@@ -22,8 +22,7 @@ PORT     STATE SERVICE     VERSION
 5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
 8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
 
-
-⸻
+---
 
 Найденные сервисы
 	•	FTP (vsftpd 2.3.4)
@@ -35,11 +34,8 @@ PORT     STATE SERVICE     VERSION
 	•	PostgreSQL 8.3.x
 	•	Apache Tomcat 1.1 (8180/tcp)
 
-⸻
-
 Уязвимости (Exploit-DB)
 	1.	vsftpd 2.3.4 — Backdoor Command Execution — EDB-ID 17491
 	2.	Samba 3.x — Remote Code Execution (Username map script) — EDB-ID 16320
 	3.	Apache Tomcat (8180/tcp) — Manager App Default Credentials — EDB-ID 16189
 
-⸻
