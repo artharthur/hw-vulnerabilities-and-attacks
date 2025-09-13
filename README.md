@@ -2,12 +2,14 @@
 
 ---
 
+# Домашнее задание: «Уязвимости и атаки на информационные системы»
+
 ## Сканирование nmap
 
 ```bash
 nmap -sV 192.168.1.55
 
-Результаты (характерные для Metasploitable 2):
+Результаты:
 
 PORT     STATE SERVICE     VERSION
 21/tcp   open  ftp         vsftpd 2.3.4
@@ -22,20 +24,19 @@ PORT     STATE SERVICE     VERSION
 5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
 8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
 
----
 
-Найденные сервисы
-	•	FTP (vsftpd 2.3.4)
-	•	SSH (OpenSSH 4.7p1)
-	•	Telnet
-	•	Apache 2.2.8 (HTTP)
-	•	Samba (SMB 3.x)
-	•	MySQL 5.0.51a
-	•	PostgreSQL 8.3.x
-	•	Apache Tomcat 1.1 (8180/tcp)
+⸻
 
-Уязвимости (Exploit-DB)
-	1.	vsftpd 2.3.4 — Backdoor Command Execution — EDB-ID 17491
-	2.	Samba 3.x — Remote Code Execution (Username map script) — EDB-ID 16320
-	3.	Apache Tomcat (8180/tcp) — Manager App Default Credentials — EDB-ID 16189
+Ответы на вопросы
+
+Какие сетевые службы в ней разрешены?
+На Metasploitable доступны следующие сервисы: FTP, SSH, Telnet, SMTP, HTTP (Apache), RPC, Samba (SMB), MySQL, PostgreSQL и Apache Tomcat.
+
+Какие уязвимости были обнаружены?
+	•	Уязвимость в FTP-сервере vsftpd 2.3.4 (backdoor) — EDB-ID 17491
+	•	Уязвимость в Samba 3.x (удалённое выполнение кода) — EDB-ID 16320
+	•	Уязвимость Apache Tomcat (дефолтные учётные данные в Manager App) — EDB-ID 16189
+
+Metasploitable — это специально уязвимая ОС, в которой преднамеренно оставлены старые версии сервисов. Сканирование nmap показало множество открытых портов (FTP, SSH, Telnet, Samba, базы данных, Apache и Tomcat).
+При анализе удалось выявить, что FTP-сервер содержит известный бэкдор, Samba уязвима к удалённому выполнению кода, а Tomcat можно скомпрометировать через стандартные логин/пароль.
 
