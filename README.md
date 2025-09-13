@@ -4,6 +4,7 @@
 
 ## Сканирование nmap
 
+```
 nmap -sV 192.168.1.55
 
 Результаты:
@@ -20,7 +21,7 @@ PORT     STATE SERVICE     VERSION
 3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
 5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
 8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
-
+```
 
 ⸻
 
